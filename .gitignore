@@ -3,3 +3,5 @@
 !**/src/**/build/
 
 /.idea/
+
+/plugin/run/

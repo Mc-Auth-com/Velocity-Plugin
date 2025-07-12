@@ -1,14 +1,27 @@
 plugins {
     java
+    alias(libs.plugins.runVelocity)
 }
 
 version = "1.0.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven {
+        name = "papermc-repo"
+        url = uri("https://repo.papermc.io/repository/maven-public/")
+    }
 }
 
 dependencies {
+    compileOnly(libs.velocity.api)
+    annotationProcessor(libs.velocity.api)
+}
+
+tasks {
+    runVelocity {
+        velocityVersion(libs.versions.velocity.get())
+    }
 }
 
 var targetJavaVersion = 21
@@ -19,4 +32,19 @@ java {
 tasks.withType<JavaCompile>().configureEach {
     options.encoding = "UTF-8"
     options.release.set(targetJavaVersion)
+}
+
+val generateTemplates by tasks.registering(Copy::class) {
+    val props = mapOf(
+        "version" to project.version,
+        "projectName" to rootProject.name,
+    )
+    from(file("src/main/templates"))
+    into(layout.buildDirectory.dir("generated/sources/templates"))
+    expand(props)
+    inputs.properties(props)
+}
+
+sourceSets.main {
+    java.srcDir(generateTemplates.map { it.destinationDir })
 }
