@@ -1,6 +1,7 @@
 plugins {
     java
     alias(libs.plugins.runVelocity)
+    alias(libs.plugins.shadow)
 }
 
 version = "1.0.0-SNAPSHOT"
@@ -19,6 +20,13 @@ dependencies {
 }
 
 tasks {
+    shadowJar {
+        enableRelocation = true
+        relocationPrefix = "com.mc_auth.velocity_plugin.libs"
+
+        minimize()
+    }
+
     runVelocity {
         velocityVersion(libs.versions.velocity.get())
     }
