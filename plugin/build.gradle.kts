@@ -44,6 +44,7 @@ tasks {
 
         enableRelocation = true
         relocationPrefix = "com.mc_auth.velocity_plugin.libs"
+        mergeServiceFiles()
 
         minimize {
             exclude(dependency(libs.postgresql))
