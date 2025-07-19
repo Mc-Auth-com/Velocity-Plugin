@@ -29,6 +29,9 @@ dependencies {
 
 tasks {
     shadowJar {
+        archiveBaseName = rootProject.name.replace(' ', '-')
+        archiveClassifier = ""
+
         enableRelocation = true
         relocationPrefix = "com.mc_auth.velocity_plugin.libs"
 
