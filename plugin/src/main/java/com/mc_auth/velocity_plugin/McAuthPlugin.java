@@ -46,7 +46,7 @@ public class McAuthPlugin {
             this.databaseClient.updateAccount(event.getPlayer().getUniqueId(), event.getPlayer().getUsername());
 
             String formattedOtp = determineOtpToDisplay(event.getPlayer());
-            this.logger.info(event.getPlayer().getUsername() + " successfully requested an One-Time-Password");
+            this.logger.info("{} successfully requested an One-Time-Password", event.getPlayer().getUsername());
 
             Component successKickMessage = formatKickMessage(
                     this.settingsFile.kickSuccess.getValueAsString(),
@@ -56,7 +56,7 @@ public class McAuthPlugin {
             event.setResult(ResultedEvent.ComponentResult.denied(successKickMessage));
             return;
         } catch (GeneralSecurityException | SQLException ex) {
-            this.logger.error("Failed to generate an OTP for " + event.getPlayer().getUsername() + " (" + event.getPlayer().getUniqueId().toString() + ")", ex);
+            this.logger.error("Failed to generate an OTP for {} ({})", event.getPlayer().getUsername(), event.getPlayer().getUniqueId(), ex);
         }
 
         Component kickMessage = formatKickMessage(this.settingsFile.kickError.getValueAsString(), event.getPlayer(), "");
