@@ -9,6 +9,10 @@ version = "1.0.0-SNAPSHOT"
 repositories {
     mavenCentral()
     maven {
+        name = "sprax-repo"
+        url = uri("https://repo.sprax2013.de/repository/maven-public/")
+    }
+    maven {
         name = "papermc-repo"
         url = uri("https://repo.papermc.io/repository/maven-public/")
     }
@@ -17,6 +21,10 @@ repositories {
 dependencies {
     compileOnly(libs.velocity.api)
     annotationProcessor(libs.velocity.api)
+
+    implementation(libs.sprax.lime)
+    implementation(libs.postgresql)
+    implementation(libs.j256.twoFactorAuth)
 }
 
 tasks {
@@ -24,7 +32,9 @@ tasks {
         enableRelocation = true
         relocationPrefix = "com.mc_auth.velocity_plugin.libs"
 
-        minimize()
+        minimize {
+            exclude(dependency(libs.postgresql))
+        }
     }
 
     runVelocity {
