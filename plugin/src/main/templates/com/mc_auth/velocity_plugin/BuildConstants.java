@@ -4,4 +4,8 @@ package com.mc_auth.velocity_plugin;
 public class BuildConstants {
     public static final String NAME = "${projectName}";
     public static final String VERSION = "${version}";
+
+    private BuildConstants() {
+        throw new IllegalStateException("Utility class");
+    }
 }

@@ -3,6 +3,10 @@ package com.mc_auth.velocity_plugin.one_time_password;
 import org.jetbrains.annotations.NotNull;
 
 public class OtpFormatter {
+    private OtpFormatter() {
+        throw new IllegalStateException("Utility class");
+    }
+
     /**
      * Takes a 1 to 6 digit long number and formats it
      * into {@code "### ###"} with leading zeros if needed
