@@ -1,10 +1,20 @@
 plugins {
     java
+    alias(libs.plugins.sonarqube)
     alias(libs.plugins.runVelocity)
     alias(libs.plugins.shadow)
 }
 
 version = "1.0.0-SNAPSHOT"
+
+sonar {
+    properties {
+        property("sonar.projectName", rootProject.name)
+        property("sonar.projectKey", "Mc-Auth-com_Velocity-Plugin")
+        property("sonar.organization", "mc-auth-com")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
+}
 
 repositories {
     mavenCentral()
