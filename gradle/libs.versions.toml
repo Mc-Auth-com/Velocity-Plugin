@@ -9,6 +9,6 @@ postgresql = { module = "org.postgresql:postgresql", version = "42.7.7" }
 
 [plugins]
 jetbrains-ideaExt = { id = "org.jetbrains.gradle.plugin.idea-ext", version = "1.2" }
-runVelocity = { id = "xyz.jpenilla.run-velocity", version = "2.3.1" }
+runVelocity = { id = "xyz.jpenilla.run-velocity", version = "3.0.0" }
 shadow = { id = "com.gradleup.shadow", version = "9.0.0-rc1" }
 sonarqube = { id = "org.sonarqube", version = "6.2.0.5505" }
