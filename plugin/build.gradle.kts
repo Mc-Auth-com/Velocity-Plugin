@@ -42,7 +42,7 @@ tasks {
         archiveBaseName = rootProject.name.replace(' ', '-')
         archiveClassifier = ""
 
-        enableRelocation = true
+        enableAutoRelocation = true
         relocationPrefix = "com.mc_auth.velocity_plugin.libs"
         mergeServiceFiles()
 
