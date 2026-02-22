@@ -16,11 +16,10 @@ public class SettingsFile {
     private final Config config = new Config(
             null,
             """
-                    Mc-Auth.com (BungeeCord Plugin)
+                    Mc-Auth.com (Velocity Plugin)
                     
                     Support: https://Sprax.me/Discord
-                    Updates and Information:
-                    Information for developers: https://github.com/Mc-Auth-com/McAuth-BungeeCord"""
+                    More details about the plugin: https://github.com/Mc-Auth-com/Velocity-Plugin"""
     )
             .withCommentEntry("PostgreSQL", "This plugins requires access to the same database as the Mc-Auth backend");
 
