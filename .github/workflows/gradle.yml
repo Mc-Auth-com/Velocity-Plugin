@@ -28,7 +28,7 @@ jobs:
         run: ./gradlew shadowJar
 
       - name: Upload Plugin JAR file
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: Mc-Auth-Velocity-Plugin
           path: plugin/build/libs/Mc-Auth-Velocity-Plugin-*.jar
