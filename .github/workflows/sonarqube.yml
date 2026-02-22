@@ -37,7 +37,7 @@ jobs:
 
       - name: Setup Gradle
         if: env.SONAR_TOKEN != null
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v5
 
       - name: Build and analyze
         if: env.SONAR_TOKEN != null
