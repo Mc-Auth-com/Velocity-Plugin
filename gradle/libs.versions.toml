@@ -8,7 +8,7 @@ j256-twoFactorAuth = { module = "com.j256.two-factor-auth:two-factor-auth", vers
 postgresql = { module = "org.postgresql:postgresql", version = "42.7.10" }
 
 [plugins]
-jetbrains-ideaExt = { id = "org.jetbrains.gradle.plugin.idea-ext", version = "1.2" }
+jetbrains-ideaExt = { id = "org.jetbrains.gradle.plugin.idea-ext", version = "1.4.1" }
 runVelocity = { id = "xyz.jpenilla.run-velocity", version = "2.3.1" }
 shadow = { id = "com.gradleup.shadow", version = "9.0.0-rc1" }
 sonarqube = { id = "org.sonarqube", version = "7.2.2.6593" }
